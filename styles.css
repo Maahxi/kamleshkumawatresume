@@ -2135,3 +2135,125 @@ button, input, textarea, select {
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   3D TILTED CYLINDER HERO SHOWCASE
+   ========================================================================== */
+.tilted-grid-section {
+  padding: 40px 0 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tilted-grid-card {
+  position: relative;
+  height: 480px;
+  width: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: radial-gradient(circle at 50% 50%, #151d2c 0%, #080c14 100%);
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.tilted-grid-hero-root {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  container-type: size;
+  overflow: hidden;
+}
+
+.tilted-grid-band {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+}
+
+.tgh-tile {
+  position: absolute;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.tgh-slice {
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  background-color: #1e293b;
+  backface-visibility: hidden;
+}
+
+.tgh-slice.slice-first {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.tgh-slice.slice-last {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.tgh-img {
+  position: absolute;
+  top: 0;
+  max-width: none;
+  object-fit: cover;
+  user-select: none;
+  pointer-events: none;
+}
+
+.tilted-grid-overlay-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 40px 24px;
+  text-align: center;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(10, 15, 26, 0.72) 0%, rgba(10, 15, 26, 0.2) 65%, transparent 100%);
+}
+
+.tg-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold-400);
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.28);
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+}
+
+.tg-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  margin: 12px 0 8px;
+}
+
+.tg-subtitle {
+  max-width: 620px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .tilted-grid-card {
+    height: 400px;
+  }
+}
